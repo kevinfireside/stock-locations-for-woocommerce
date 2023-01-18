@@ -103,9 +103,9 @@ if ( ! class_exists( 'SlwProductHelper' ) ) {
 
 			$product = wc_get_product( $product_id );
 			if ( $product->is_type( 'variation' ) ) {
-				do_action( 'woocommerce_variation_set_stock_status', $product_id, $status, $product );
+				do_action( 'woocommerce_variation_set_stock_status', $product->get_id(), $status, $product );
 			} else {
-				do_action( 'woocommerce_product_set_stock_status', $product_id, $status, $product );
+				do_action( 'woocommerce_product_set_stock_status', $product->get_id(), $status, $product );
 			}
 		}
 		public static function get_product_locations_stock_total( $product, $stock_locations=array() ){
